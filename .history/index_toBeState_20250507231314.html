@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GompaTech Insights - Engineering Technology Leadership Blog</title>
+    <title>GompaTech PLM Insights - Engineering Technology Leadership Blog</title>
     <style>
         :root {
             --primary: #1a5276;
@@ -205,87 +205,128 @@
             color: var(--dark-gray);
         }
         
-        /* Latest Blog Post */
-        .latest-post {
+        /* Industry Section */
+        .industries {
             padding: 60px 0;
         }
         
-        .post-card {
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .industry-card {
             background-color: var(--white);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin: 0 auto;
-            max-width: 800px;
+            transition: transform 0.3s ease;
         }
         
-        .post-img {
-            height: 300px;
+        .industry-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .industry-img {
+            height: 160px;
             background-color: var(--medium-gray);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
         }
         
-        .post-content {
-            padding: 30px;
+        .industry-content {
+            padding: 20px;
         }
         
-        .post-category {
+        .industry-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .industry-content p {
+            font-size: 14px;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+        
+        /* Featured Content */
+        .featured-content {
+            padding: 60px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .blog-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-img {
+            height: 200px;
+            background-color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-category {
             display: inline-block;
             padding: 5px 10px;
             background-color: var(--accent);
             color: var(--white);
-            font-size: 14px;
+            font-size: 12px;
             border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .blog-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .blog-content p {
+            font-size: 15px;
+            color: var(--dark-gray);
             margin-bottom: 15px;
         }
         
-        .post-content h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-        
-        .post-content p {
-            font-size: 16px;
-            color: var(--dark);
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-        
-        .post-meta {
+        .blog-meta {
             display: flex;
             justify-content: space-between;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--dark-gray);
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--medium-gray);
         }
         
-        /* Coming Soon */
-        .coming-soon {
-            padding: 60px 0;
-            background-color: var(--light-gray);
-            text-align: center;
-        }
-        
-        .topics-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .topic-badge {
-            background-color: var(--white);
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .gated-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--success);
+            color: var(--white);
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 4px;
         }
         
         /* Contact Section */
@@ -520,6 +561,10 @@
                 font-size: 16px;
             }
             
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .newsletter-form {
                 flex-direction: column;
             }
@@ -540,12 +585,15 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Gompa<span>Tech</span> Insights</a>
+            <a href="#" class="logo">Gompa<span>Tech</span> PLM Insights</a>
             <button class="mobile-menu-toggle">&#9776;</button>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#latest" class="nav-link">Latest Insights</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Industries</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Insights</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -554,10 +602,10 @@
     <section class="hero">
         <div class="container hero-content">
             <h1>Engineering Technology Leadership Insights</h1>
-            <p>Leverage our experience from Google to Boeing, from Silicon Valley to manufacturing plants. Get insider knowledge on PLM and Manufacturing Intelligence strategies that drive innovation and efficiency.</p>
+            <p>Leverage our experience from Google to Boeing, from Silicon Valley to manufacturing plants. Get insider knowledge on PLM strategies that drive innovation and efficiency.</p>
             <div>
                 <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
-                <a href="#latest" class="btn btn-outline">Read Latest Insight</a>
+                <a href="#featured" class="btn btn-outline">Explore Insights</a>
             </div>
         </div>
     </section>
@@ -573,12 +621,12 @@
                 <div class="credential-item">
                     <div class="credential-icon">🌐</div>
                     <h3>Technology Leaders</h3>
-                    <p>Bringing technology expertise from tech leaders like Google</p>
+                    <p>Direct experience at Google and other Silicon Valley pioneers</p>
                 </div>
                 <div class="credential-item">
                     <div class="credential-icon">✈️</div>
                     <h3>Aerospace</h3>
-                    <p>We know the systems it takes to build a safe-machine</p>
+                    <p>Code development and consulting for Boeing and top-tier suppliers</p>
                 </div>
                 <div class="credential-item">
                     <div class="credential-icon">🏭</div>
@@ -594,68 +642,149 @@
         </div>
     </section>
 
-    <!-- Latest Blog Post -->
-    <section id="latest" class="latest-post">
+    <!-- Industries Section -->
+    <section class="industries">
         <div class="container">
             <div class="section-header">
-                <h2>Latest Insight</h2>
-                <p>Our most recent engineering technology leadership perspective</p>
+                <h2>Industries We Serve</h2>
+                <p>Specialized PLM and engineering technology solutions for complex sectors</p>
             </div>
-            <div class="post-card">
-                <div class="post-img">🔍</div>
-                <div class="post-content">
-                    <span class="post-category">Manufacturing Intelligence</span>
-                    <h3>Manufacturing Intelligence Accelerator</h3>
-                    <p>
-                        A deep dive into how modern Manufacturing Intelligence technologies are transforming manufacturing operations in the defense industry through integrated data flows and analytics. Learn how defense manufacturers are leveraging Industry 4.0 technologies to harness shop floor efficiencies.
-                    </p>
-                    <p>
-                        This insight explores examples from the defense industry where manufacturing intelligence has driven measurable improvements in reliability of production during war-time-preparedness.
-                    </p>
-                    <div class="post-meta">
-                        <span>May 2, 2025</span>
-                        <a href="https://blogs.gompatech.com/wartimemfg.html" class="btn btn-primary">Read Full Article</a>
+            <div class="industry-grid">
+                <div class="industry-card">
+                    <div class="industry-img">✈️</div>
+                    <div class="industry-content">
+                        <h3>Aerospace</h3>
+                        <p>Streamlining complex design and compliance processes for aircraft manufacturers and suppliers.</p>
+                        <a href="#">Learn more →</a>
                     </div>
                 </div>
-                <div class="post-card">
-                    <div class="post-img">🔍</div>
-                    <div class="post-content">
-                        <span class="post-category">PLM Strategy</span>
-                        <h3>Made In America - The Compliance Challegne</h3>
-                        <p>
-                            Regulations like "Made in America" and the "Build America, Buy America" (BABA) Act aren't just policy papers; they are fundamental changes impacting how we design, source, and build the critical engineering product solutions
-                        </p>
-                        <p>
-                            This insight explores how systems help the complex challenge of Compliance - as necessiated by regulations like "Made In America".
-                        </p>
-                        <div class="post-meta">
-                            <span>May 2, 2025</span>
-                            <a href="https://blogs.gompatech.com/mia.html" class="btn btn-primary">Read Full Article</a>
-                        </div>
+                <div class="industry-card">
+                    <div class="industry-img">🚗</div>
+                    <div class="industry-content">
+                        <h3>Automotive</h3>
+                        <p>Accelerating development cycles while maintaining quality for traditional and EV manufacturers.</p>
+                        <a href="#">Learn more →</a>
                     </div>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-img">⚙️</div>
+                    <div class="industry-content">
+                        <h3>Manufacturing</h3>
+                        <p>Optimizing production processes and connecting engineering with shop floor operations.</p>
+                        <a href="#">Learn more →</a>
+                    </div>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-img">🔬</div>
+                    <div class="industry-content">
+                        <h3>Medical Devices</h3>
+                        <p>Ensuring compliance while accelerating time-to-market for regulated medical products.</p>
+                        <a href="#">Learn more →</a>
+                    </div>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-img">⚓</div>
+                    <div class="industry-content">
+                        <h3>Marine Engineering</h3>
+                        <p>Managing complex vessel design and construction processes for shipbuilders.</p>
+                        <a href="#">Learn more →</a>
+                    </div>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-img">🛡️</div>
+                    <div class="industry-content">
+                        <h3>Defense</h3>
+                        <p>Secure, compliant PLM solutions for defense contractors and suppliers.</p>
+                        <a href="#">Learn more →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Coming Soon -->
-    <section class="coming-soon">
+    <!-- Featured Content -->
+    <section id="featured" class="featured-content">
         <div class="container">
             <div class="section-header">
-                <h2>Coming Soon</h2>
-                <p>We're developing in-depth insights on these critical topics</p>
+                <h2>Featured Insights</h2>
+                <p>Expert perspectives on engineering technology leadership</p>
             </div>
-            <div class="topics-list">
-                <span class="topic-badge">PLM Implementation ROI</span>
-                <span class="topic-badge">Engineering Change Management</span>
-                <span class="topic-badge">Digital Thread Implementation</span>
-                <span class="topic-badge">Aerospace Compliance</span>
-                <span class="topic-badge">Medical Device PLM</span>
-                <span class="topic-badge">EV Development Processes</span>
-                <span class="topic-badge">Manufacturing Digital Transformation</span>
-                <span class="topic-badge">PLM for Defense Contractors</span>
-            </div>
-            <div style="margin-top: 30px;">
-                <a href="#newsletter" class="btn btn-primary">Subscribe for Updates</a>
+            <div class="content-grid">
+                <div class="blog-card">
+                    <div class="blog-img">📊</div>
+                    <span class="gated-badge">Premium</span>
+                    <div class="blog-content">
+                        <span class="blog-category">PLM Strategy</span>
+                        <h3>PLM Implementation ROI: How to Measure Success Beyond Software Deployment</h3>
+                        <p>Discover key metrics for tracking PLM value and building executive support for your initiative.</p>
+                        <div class="blog-meta">
+                            <span>May 2, 2025</span>
+                            <a href="#">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">🔄</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Digital Transformation</span>
+                        <h3>Connecting Engineering and Manufacturing: The Digital Thread Approach</h3>
+                        <p>How leading aerospace manufacturers are eliminating silos between design and production.</p>
+                        <div class="blog-meta">
+                            <span>April 28, 2025</span>
+                            <a href="#">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">⚡</div>
+                    <span class="gated-badge">Premium</span>
+                    <div class="blog-content">
+                        <span class="blog-category">Electric Vehicles</span>
+                        <h3>Engineering Data Management for EV Battery Development</h3>
+                        <p>Specialized PLM approaches for managing complex battery systems development and testing.</p>
+                        <div class="blog-meta">
+                            <span>April 15, 2025</span>
+                            <a href="#">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">🚢</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Marine Engineering</span>
+                        <h3>Shipbuilding in the Digital Age: PLM Strategies for Complex Vessel Construction</h3>
+                        <p>Case study on how digital tools transformed a traditional shipyard's operations.</p>
+                        <div class="blog-meta">
+                            <span>April 10, 2025</span>
+                            <a href="#">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">🔍</div>
+                    <span class="gated-badge">Premium</span>
+                    <div class="blog-content">
+                        <span class="blog-category">Case Study</span>
+                        <h3>How Boeing Reduced Engineering Change Cycle Time by 60%</h3>
+                        <p>Behind-the-scenes look at process optimization in aerospace manufacturing.</p>
+                        <div class="blog-meta">
+                            <span>April 5, 2025</span>
+                            <a href="#">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">📱</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Technology</span>
+                        <h3>PLM in Your Pocket: Mobile-First Approaches for Engineering Teams</h3>
+                        <p>How Google's mobile development philosophy can transform engineering workflows.</p>
+                        <div class="blog-meta">
+                            <span>March 28, 2025</span>
+                            <a href="#">Read More →</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -681,32 +810,26 @@
                     <p>Reach out today to discuss your specific challenges.</p>
                 </div>
                 <div class="contact-form">
-                    <!-- <form> -->
-                    <form  action="https://formspree.io/f/mdkewzol"
-                        method="POST" id="contact-form">
+                    <form>
                         <div class="form-group">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" name="name" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" name="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Phone</label>
-                            <input type="tel" name="phone" id="phone" class="form-control">
+                            <input type="text" id="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="company" class="form-label">Company</label>
-                            <input type="text" name="company" id="company" class="form-control" required>
+                            <input type="text" id="company" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="title" class="form-label">Job Title</label>
-                            <input type="text" name="title" id="title" class="form-control" required>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" id="phone" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="message" class="form-label">How can we help?</label>
-                            <textarea name="message" id="message" class="form-control" required></textarea>
+                            <textarea id="message" class="form-control" required></textarea>
                         </div>
                         <button type="submit" class="btn-submit">Send Message</button>
                     </form>
@@ -716,10 +839,10 @@
     </section>
 
     <!-- Newsletter -->
-    <section id="newsletter" class="newsletter">
+    <section class="newsletter">
         <div class="container">
             <h2>Get Engineering Technology Insights</h2>
-            <p>Be the first to receive our upcoming content on PLM strategy, digital transformation, and industry-specific engineering solutions.</p>
+            <p>Subscribe to our newsletter for exclusive content, industry trends, and PLM best practices delivered to your inbox monthly.</p>
             <form class="newsletter-form">
                 <input type="email" class="newsletter-input" placeholder="Your email address" required>
                 <button type="submit" class="newsletter-btn">Subscribe</button>
@@ -735,8 +858,9 @@
                     <h3>GompaTech</h3>
                     <p>Engineering technology expertise from Silicon Valley to the shop floor.</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/gompatech" class="social-icon">in</a>
+                        <a href="#" class="social-icon">in</a>
                         <a href="#" class="social-icon">tw</a>
+                        <a href="#" class="social-icon">fb</a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -744,18 +868,27 @@
                     <ul class="footer-links">
                         <li class="footer-link"><a href="#">Aerospace</a></li>
                         <li class="footer-link"><a href="#">Automotive</a></li>
+                        <li class="footer-link"><a href="#">Oil & Gas</a></li>
                         <li class="footer-link"><a href="#">Medical Devices</a></li>
-                        <li class="footer-link"><a href="#">Manufacturing</a></li>
+                        <li class="footer-link"><a href="#">Defense</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact</h3>
+                    <h3>Insights</h3>
                     <ul class="footer-links">
-                        <li class="footer-link"><a href="#contact">Get in Touch</a></li>
-                        <!-- <li class="footer-link"><a href="#newsletter">Subscribe</a></li> -->
-                        <li class="footer-link">team@gompatech.com</li> 
-                        <li class="footer-link">+1 (650) 450-8263</li>
-                        <li class="footer-link">+91 (913) 116-3733</li>
+                        <li class="footer-link"><a href="#">Case Studies</a></li>
+                        <li class="footer-link"><a href="#">White Papers</a></li>
+                        <li class="footer-link"><a href="#">PLM Resources</a></li>
+                        <li class="footer-link"><a href="#">Engineering Guides</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">About Us</a></li>
+                        <li class="footer-link"><a href="#">Our Team</a></li>
+                        <li class="footer-link"><a href="#">Careers</a></li>
+                        <li class="footer-link"><a href="#">Contact</a></li>
                     </ul>
                 </div>
             </div>
