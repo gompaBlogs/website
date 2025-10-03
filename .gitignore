@@ -1,2 +1,4 @@
-./auto_finisher/
-./history/
+auto_finisher/
+.history/
+.DS_Store
+.gitignore
